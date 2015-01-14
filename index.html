@@ -1,75 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Boston Golang</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,900italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.css" media="screen">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
-      <script src="assets/js/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="jumbotron">
-          <div class="container">
-            <div class="row">
-                <h1>Boston Golang</h1>
-                <p>Local community of Go programmers and enthusiasts</p>
-            </div>
-            <div class="row">
-              <p>
-              Our next meeting is on Jan 19th 7:00pm<br>
-              at Brightcove, 290 Congress St Fl 4, Boston, MA
-              </p>
-              <p>
-              Hackathon!<br/>
-              This meet our esteemed presenters will be giving us a crash course on a few Go web frameworks, then we will attempt to make things!
-							</p>
+---
+layout: default
+---
 
-							<p>
-              The Presenters:</br>
-              John Hillard works for Next Jump where they use Go *in production* (I dream of the day...). He'll be going over the built in net/http package, which is more powerful than you might think. This will certainly be enough to get any project going, and will also serve as an introduction for the second speaker.
-							</p>
-							<p>
-              Andrew Haskell will be walking us through Gorilla (one of my personal favorites), specifically as someone coming from the MEAN stack. Compared to some other frameworks, Gorilla is more minimal, working purely by extending the built in net/http package. Gorilla should prove a lean and mean (to punny?) way to get started building something quickly.
-							</p>
+<div class="home">
 
-							<p>
-              After our presenters have completed filling our minds with glorious knowledge (about 15 minutes each), we will (individually or in groups) attempt to make things! And at the end we will have time for daring volunteers to present their creations.
-							</p>
+  <h1 class="page-heading">Posts</h1>
 
-							<p>
-              Hackathons not your thing? Come anyway! Learn some things and come hang out with like-minded people (and maybe think of something while you're there)!
-							</p>
-              </p>
-              <p><a href="http://www.meetup.com/Boston-Go-lang-User-Group/events/219177031/?utm_source=index.html&utm_medium=website&utm_campaign=bostongolang.org">RSVP</a></p>
-            </div>
-            <div class="row">
-              <a href="https://plus.google.com/communities/103337146295481792015">Google+ Community</a> |
-              <a href="https://groups.google.com/forum/#!forum/boston-golang">Mailing List</a> |
-              <a href="https://twitter.com/bostongolang">@BostonGolang</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-		<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-		ga('create', 'UA-55388449-2', 'auto');
-		ga('send', 'pageview');
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+				<p>
+					{{ post.content }}
+				</p>
+      </li>
+    {% endfor %}
+  </ul>
 
-		</script>
-  </body>
-  </html>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>

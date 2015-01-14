@@ -1,0 +1,14 @@
+# Site settings
+title: Boston Golang
+email: blg@bostongolang.org
+description: > # this means to ignore newlines until "baseurl:"
+  A community for people in the greater Boston area who use and love the Go programming language.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://bostongolang.org" # the base hostname & protocol for your site
+twitter_username: bostongolang
+github_username:  bostongolang
+gplus_url: "https://plus.google.com/communities/103337146295481792015"
+meetup_url: "http://www.meetup.com/Boston-Go-lang-User-Group/?utm_source=footer&utm_medium=website&utm_campaign=bostongolang.org"
+
+# Build settings
+markdown: kramdown
